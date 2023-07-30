@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "5e914ebe-6808-4c73-b7a4-4198a34e1556",
+		"name": "api1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar todos os empregados",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/empregado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"empregado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar um id de empregado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/empregado/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"empregado",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar um id de departamento",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/departamento/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"departamento",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Departamentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api1/departamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"departamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Departamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "Content-Type",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Departamento XYZ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/departamento?nome=Departamento XYZ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"departamento"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Departamento XYZ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Empregado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "KEY",
+						"value": "Content-Type",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Joana da Silva\",\r\n  \"dataNascimento\": \"1992-03-15\",\r\n  \"matricula\": 12345,\r\n  \"departamento\": {\r\n    \"id\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/empregado?nome=Joana da Silva&departamento=1&dataNascimento=1992-03-15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"empregado"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Joana da Silva"
+						},
+						{
+							"key": "departamento",
+							"value": "1"
+						},
+						{
+							"key": "dataNascimento",
+							"value": "1992-03-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar cadastro de empregado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Joana da Silva\",\r\n  \"dataNascimento\": \"1992-03-15\",\r\n  \"matricula\": 12345,\r\n  \"departamento\": {\r\n    \"id\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/empregado/1?nome=Joana da Silva Sauro&departamento=1&dataNascimento=1992-03-14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"empregado",
+						"1"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Joana da Silva Sauro"
+						},
+						{
+							"key": "departamento",
+							"value": "1"
+						},
+						{
+							"key": "dataNascimento",
+							"value": "1992-03-14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar cadastro de departamento",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "KEY",
+						"value": "Content-Type",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Novo Departamento\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/departamento/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"departamento",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar cadastro de empregado",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "KEY",
+						"value": "Content-Type",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/empregado/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"empregado",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar cadastro de equipamento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api1/departamento/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api1",
+						"departamento",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
